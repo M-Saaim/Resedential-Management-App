@@ -1,10 +1,17 @@
-import 'package:arcore_flutter_plugin_example/screens/signinpage.dart';
+import 'package:flutterfirebaseexample/screens/signinpage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
+  print('ARCORE IS AVAILABLE?');
+  // print(await ArCoreController.checkArCoreAvailability());
+  print('\nAR SERVICES INSTALLED?');
+  //print(await ArCoreController.checkIsArCoreInstalled());
+  runApp(MaterialApp(home: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -14,6 +21,34 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      initialRoute: FirebaseAuth.instance.currentUser == null
+          ? 'login_screen'
+          : 'home_screen',
+      onGenerateRoute: (settings) {
+        late Widget currentScreen;
+        switch (settings.name) {
+          case 'registration_screen':
+            currentScreen = SignIn();
+            break;
+          // case 'login_screen':
+          //   currentScreen = LoginPage();
+          //   break;
+          // case 'home_screen':
+          //   currentScreen = HomeScreen();
+          //   break;
+          // case 'ar_screen':
+          //   final args = settings.arguments as Map<String, dynamic>;
+
+          //   currentScreen = ArScreen(
+          //     url: args["url"].toString(),
+          //   );
+          //   break;
+          default:
+            currentScreen = SignIn();
+            break;
+        }
+        return MaterialPageRoute(builder: (context) => currentScreen);
+      },
       title: 'Resedential App',
       theme: ThemeData(
         // This is the theme of your application.
