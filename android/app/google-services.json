@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "166461873253",
+    "project_id": "resedential-management",
+    "storage_bucket": "resedential-management.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:166461873253:android:813973c8c2ce35aac7ba8c",
+        "android_client_info": {
+          "package_name": "com.example.flutterfirebaseexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "166461873253-vd79o81cpquei9pf2g818hanfq8n55sr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-ttZBw3jAYhEpnQe9LtN2O61YOw5Q4jM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "166461873253-vd79o81cpquei9pf2g818hanfq8n55sr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
