@@ -13,7 +13,7 @@ void main() async {
   // print(await ArCoreController.checkArCoreAvailability());
   // print('\nAR SERVICES INSTALLED?');
   //print(await ArCoreController.checkIsArCoreInstalled());
-  runApp(MaterialApp(home: MyApp()));
+  runApp(const MaterialApp(home: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
