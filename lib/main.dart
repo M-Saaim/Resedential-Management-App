@@ -1,4 +1,4 @@
-import 'package:flutterfirebaseexample/screens/homescreen.dart';
+// import 'package:flutterfirebaseexample/screens/homescreen.dart';
 import 'package:flutterfirebaseexample/screens/loginpage.dart';
 import 'package:flutterfirebaseexample/screens/signinpage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -9,9 +9,9 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
 
-  print('ARCORE IS AVAILABLE?');
+  // print('ARCORE IS AVAILABLE?');
   // print(await ArCoreController.checkArCoreAvailability());
-  print('\nAR SERVICES INSTALLED?');
+  // print('\nAR SERVICES INSTALLED?');
   //print(await ArCoreController.checkIsArCoreInstalled());
   runApp(MaterialApp(home: MyApp()));
 }
@@ -32,9 +32,9 @@ class MyApp extends StatelessWidget {
           case 'registration_screen':
             currentScreen = SignIn();
             break;
-          // case 'login_screen':
-          //   currentScreen = LoginPage();
-          //   break;
+          case 'login_screen':
+            currentScreen = LoginPage();
+            break;
           // case 'home_screen':
           //   currentScreen = HomeScreen();
           //   break;
