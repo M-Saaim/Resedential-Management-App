@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       initialRoute: FirebaseAuth.instance.currentUser == null
           ? 'login_screen'
           : 'home_screen',
-      onGenerateRoute: (settings) {
+      onGenerateRoute: (settings)  {
         late Widget currentScreen;
         switch (settings.name) {
           case 'registration_screen':
@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
         }
         return MaterialPageRoute(builder: (context) => currentScreen);
       },
-      title: 'Resedential App',
+      title: 'Residential App',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -64,7 +64,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Resedential Management App'),
+      home: const MyHomePage(title: 'Residential Management App'),
     );
   }
 }
